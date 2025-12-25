@@ -86,4 +86,17 @@ int main(){
     CPair<double,double> p2 {1.1,2.2};
 }
 ```
+
+- можно сделать шаблонные параметры по умолчанию
+
 ## Non-type template parameter
+```cpp
+template<size_t N>
+struct identity{
+    enum {value = N};
+};
+
+std::cout << indentity<5>::value << std::endl;
+// компилятор за нас создает identity_5, где value = 5
+```
+
